@@ -1,31 +1,8 @@
 <?php
-require_once 'classes/Ftp.php';
+require_once 'classes/FTP.php';
 
-$f = new FTP;
+$ftp = new FTP('ftp.myserver.com', 'username', 'password',false);
 
-$server = "files.000webhost.com";
-$secure = false;
-if($f->FtpLoginStatus() === false){
-$f->FtpConnect(
-[
-	'host' => $server,
-	'secure' => false,
-	'username' => 'unspun-pattern',
-	'password' => "host115418github",	
-]
-);
-}
-if($f->FtpLoginStatus() === true){
-
-	print_r($f->FtpFiles('public_html'));
-
-	$f->FtpUpload(
-		[
-			'files' => [
-				'index.html',
-			]
-		]
-	);
-
-}
+$ftp->mkdir('somedir');
+$ftp->chdir('somedir');
 
