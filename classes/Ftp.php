@@ -45,7 +45,7 @@ class FTP
             $conn = ftp_ssl_connect($host);
             $login_result = ftp_login($conn, $user, $pass);
             $this->connection = $conn;
-            $this->connectionString = 'ftps://'.$user.':'.$pass.'@'.$host;
+            $this->connectionString = 'sftp://'.$user.':'.$pass.'@'.$host;
         } else {
             $this->connection = null;
             $this->connectionString = null;
