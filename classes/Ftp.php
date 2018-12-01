@@ -30,7 +30,7 @@ class FTP
      * @param $host server host
      *        $user username
      *        $pass password
-     *        $secured ftp or ftps
+     *        $secured ftp or sftp
      *
      * @return bool
      */
